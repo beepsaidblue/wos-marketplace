@@ -46,13 +46,14 @@ const MultiCurrencyMarketplace: React.FC = () => {
 
   return (
     <DesContainer>
+      <img src="/banner.jpeg" alt="World of Solana" width="100%" />
       <Stat
         candyShop={candyShop}
-        title={"Marketplace"}
+        title={"WOS Store"}
         description={
-          "Candy Shop is an open source on-chain protocol that empowers DAOs, NFT projects and anyone interested in creating an NFT marketplace to do so within minutes!"
+          "Explore, buy and sell pets and other NFTs in WOS and SOL!"
         }
-        style={{ paddingBottom: 50 }}
+        style={{ paddingBottom: 50, paddingTop: 30 }}
       />
       <Orders
         wallet={wallet}

@@ -54,37 +54,16 @@ const TopNav: React.FC<TopNavProps> = ({
     <HeaderBar>
       <Logo>
         <Link to='/'>
-          <img alt='' src='/logo.png' />
+          <img alt='World of Solana' src='/logo-full.svg' width={120} />
         </Link>
       </Logo>
       <Menu>
         <li>
-          <Link to='/'>Home</Link>
+          <Link to='/'>Store</Link>
         </li>
         <li>
-          <Link to='/marketplace'>Marketplace</Link>
+          <Link to='/my-collection'>My Collection</Link>
         </li>
-        <li>
-          <Link to='/sell'>Sell</Link>
-        </li>
-        <DropdownAnchor ref={anchorRef} onClick={handleToggle}>
-          Other Layouts
-          <Popper open={open} anchorEl={anchorRef.current} role={undefined} transition disablePortal>
-            {({ TransitionProps, placement }) => (
-              <Paper>
-                <ClickAwayListener onClickAway={handleClose}>
-                  <MenuList autoFocusItem={open} onKeyDown={handleListKeyDown}>
-                    <MenuItem><Link to='/custom-token-marketplace'>Custom Token Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-collection-marketplace'>Multi Collection Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/marketplace-with-url'>Marketplace With URL</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-marketplace'>Multi Currency Marketplace</Link></MenuItem>
-                    <MenuItem><Link to='/multi-currency-sell'>Multi Currency Sell</Link></MenuItem>
-                  </MenuList>
-                </ClickAwayListener>
-              </Paper>
-            )}
-          </Popper>
-        </DropdownAnchor>
       </Menu>
       { showCurrencyToggle && <CurrencyToggle />}
       <Wallet>
@@ -104,7 +83,7 @@ const HeaderBar = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 `
 
 const DropdownAnchor = styled.li`
@@ -188,9 +167,12 @@ const Menu = styled.ul`
   display: inline-flex;
   flex: 1 0 auto;
   margin-bottom: 0;
+  justify-content: center;
 
   li {
     margin: 0 12px;
+    font-size: 22px;
+    font-weight: bold;
 
     a {
       color: var(--main-text-color);
@@ -211,8 +193,7 @@ const Menu = styled.ul`
 
     a:hover,
     a:active {
-      color: rgb(131, 146, 161);
-      border-bottom: 4px solid var(--title-text-color);
+      color: var(--title-text-color);
     }
   }
 `

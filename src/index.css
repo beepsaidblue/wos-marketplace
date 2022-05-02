@@ -1,10 +1,12 @@
 /* Customize your main colors in :root variables */
+@import url('https://fonts.googleapis.com/css2?family=Changa+One&family=Inter:wght@400;500;700&display=swap');
+
 :root {
   --main-background-color: #343a50;
   --card-background-color: #51576d;
   --card-background-lighter-color: #7a7f92;
   --main-text-color: #f7f6f4;
-  --title-text-color: #3cba8b;
+  --title-text-color: #923CFF;
 }
 
 body {
@@ -13,7 +15,7 @@ body {
   background-size: cover; */
 
   margin: 0;
-  font-family: 'Helvetica', Arial, sans-serif;
+  font-family: 'Open Sans', Arial, sans-serif;
   font-size:  16px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;

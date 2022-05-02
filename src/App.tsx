@@ -20,7 +20,7 @@ import styled from 'styled-components'
 
 import TopNav from './components/TopNav'
 import { CurrencyProvider } from './components/Currency'
-import Home from './views/Home'
+// import Home from './views/Home'
 import Marketplace from './views/Marketplace'
 import CustomTokenMarketplace from './views/CustomTokenMarketplace'
 import MarketplaceWithFilter from './views/MarketplaceWithFilter'
@@ -32,7 +32,7 @@ import SingleOrder from './views/SingleOrder'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
-const candyMachineId = new anchor.web3.PublicKey(process.env.REACT_APP_CANDY_MACHINE_ID!)
+// const candyMachineId = new anchor.web3.PublicKey(process.env.REACT_APP_CANDY_MACHINE_ID!)
 const network = process.env.REACT_APP_SOLANA_NETWORK as WalletAdapterNetwork
 const rpcHost = process.env.REACT_APP_SOLANA_RPC_HOST!
 const connection = new anchor.web3.Connection(rpcHost)
@@ -67,15 +67,15 @@ const theme = createTheme({
 // Used for a multi-currency shop
 const currencyOptions = [
   {
-    currencySymbol: 'SOL',
-    treasuryMint: 'So11111111111111111111111111111111111111112',
+    currencySymbol: 'WOS',
+    treasuryMint: 'WoSZYtctzp48xcdsSfGNKUGhjNdPx2qm5J2TUNfd1a1',
     currencyDecimals: 9,
-    priceDecimals: 3,
+    priceDecimals: 2,
     volumeDecimals: 1
   },
   {
-    currencySymbol: '56p',
-    treasuryMint: '56pdaHboK66cxRLkzkYVvFSAjfoNEETJUsrdmAYaTXMJ',
+    currencySymbol: 'SOL',
+    treasuryMint: 'So11111111111111111111111111111111111111112',
     currencyDecimals: 9,
     priceDecimals: 2,
     volumeDecimals: 1
@@ -112,74 +112,6 @@ const App = () => {
                   <Routes>
                     <Route
                       path='/'
-                      element={(
-                        <>
-                          <TopNav />
-                          <Home
-                            candyMachineId={candyMachineId}
-                            connection={connection}
-                            txTimeout={txTimeout}
-                            rpcHost={rpcHost}
-                          />
-                        </>
-                      )}
-                    />
-                    <Route
-                      path='/marketplace/:tokenMint'
-                      element={(
-                        <>
-                          <TopNav />
-                          <SingleOrder />
-                        </>
-                      )}
-                    />
-                    <Route
-                      path='/marketplace'
-                      element={(
-                        <>
-                          <TopNav />
-                          <Marketplace />
-                        </>
-                      )}
-                    />
-                    <Route
-                      path='/sell'
-                      element={
-                        <>
-                          <TopNav />
-                          <MyCollection />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/custom-token-marketplace'
-                      element={
-                        <>
-                          <TopNav />
-                          <CustomTokenMarketplace />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/multi-collection-marketplace'
-                      element={
-                        <>
-                          <TopNav />
-                          <MarketplaceWithFilter />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/marketplace-with-url'
-                      element={
-                        <>
-                          <TopNav />
-                          <MarketplaceWithUrl />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/multi-currency-marketplace'
                       element={
                         <>
                           <TopNav showCurrencyToggle={true} />
@@ -188,7 +120,7 @@ const App = () => {
                       }
                     />
                     <Route
-                      path='/multi-currency-sell'
+                      path='/my-collection'
                       element={
                         <>
                           <TopNav showCurrencyToggle={true} />
@@ -210,7 +142,7 @@ const App = () => {
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  margin-top: 10px;
   margin-bottom: 20px;
   padding-bottom: 20px;
   margin-right: 4%;

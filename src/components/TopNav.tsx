@@ -53,19 +53,25 @@ const TopNav: React.FC<TopNavProps> = ({
   return (
     <HeaderBar>
       <Logo>
-        <Link to='/'>
+        <a href='https://www.worldofsolana.io/'>
           <img alt='World of Solana' src='/logo-full.svg' width={120} />
-        </Link>
+        </a>
       </Logo>
       <Menu>
         <li>
-          <Link to='/'>Store</Link>
+          <Link to='/'>Shop</Link>
         </li>
         <li>
           <Link to='/my-collection'>My Collection</Link>
         </li>
+        <li>
+          <a href='https://store.worldofsolana.io/fusion/'>Fusion</a>
+        </li>
+        <li>
+          <a href='https://store.worldofsolana.io/'>Staking</a>
+        </li>
       </Menu>
-      { showCurrencyToggle && <CurrencyToggle />}
+      {/*{ showCurrencyToggle && <CurrencyToggle />}*/}
       <Wallet>
         {wallet ? (
           <ConnectButton />
@@ -171,7 +177,7 @@ const Menu = styled.ul`
 
   li {
     margin: 0 12px;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: bold;
 
     a {

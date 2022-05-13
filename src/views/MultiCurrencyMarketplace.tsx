@@ -49,7 +49,7 @@ const MultiCurrencyMarketplace: React.FC = () => {
       <img src="/banner.jpeg" alt="World of Solana" width="100%" />
       <Stat
         candyShop={candyShop}
-        title={"WOS Store"}
+        title={"W.O.S. Shop"}
         description={
           "Explore, buy and sell pets and other NFTs in WOS and SOL!"
         }

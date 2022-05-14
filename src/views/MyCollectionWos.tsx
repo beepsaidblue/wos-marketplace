@@ -27,7 +27,10 @@ const MyCollectionWos: React.FC = () => {
       CANDY_SHOP_CREATOR_ADDRESS,
       CANDY_SHOP_TREASURY_MINT,
       CANDY_SHOP_PROGRAM_ID,
-      NETWORK
+      NETWORK,
+      {
+        currencySymbol: 'WOS'
+      }
     )
   )
 

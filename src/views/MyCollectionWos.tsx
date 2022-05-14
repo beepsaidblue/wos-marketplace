@@ -7,7 +7,7 @@ import { WalletMultiButton } from '@solana/wallet-adapter-react-ui'
 import styled from 'styled-components'
 
 const CANDY_SHOP_CREATOR_ADDRESS = new PublicKey(process.env.REACT_APP_CANDY_SHOP_CREATOR_ADDRESS!)
-const CANDY_SHOP_TREASURY_MINT = new PublicKey(process.env.REACT_APP_CANDY_SHOP_TREASURY_MINT!)
+const CANDY_SHOP_TREASURY_MINT = new PublicKey('WoSZYtctzp48xcdsSfGNKUGhjNdPx2qm5J2TUNfd1a1')
 const CANDY_SHOP_PROGRAM_ID = new PublicKey(process.env.REACT_APP_CANDY_SHOP_PROGRAM_ID!)
 const NETWORK = process.env.REACT_APP_SOLANA_NETWORK! as Cluster
 
@@ -19,7 +19,7 @@ const DesContainer = styled.div`
   }
 `
 
-const MyCollection: React.FC = () => {
+const MyCollectionWos: React.FC = () => {
   const wallet = useAnchorWallet()
 
   const candyShopRef = useRef<CandyShop>(
@@ -33,7 +33,8 @@ const MyCollection: React.FC = () => {
 
   return (
     <DesContainer>
-      <h1 style={{ marginBottom: 30 }}>My Collection</h1>
+      <h1 style={{ marginBottom: 15 }}>Admin</h1>
+      <p style={{ marginBottom: 30 }}>Sell World of Solana NFTs in WOS</p>
       <Sell
         wallet={wallet}
         candyShop={candyShopRef.current}
@@ -44,4 +45,4 @@ const MyCollection: React.FC = () => {
   )
 }
 
-export default MyCollection
+export default MyCollectionWos

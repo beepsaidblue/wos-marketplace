@@ -21,14 +21,16 @@ import styled from 'styled-components'
 import TopNav from './components/TopNav'
 import { CurrencyProvider } from './components/Currency'
 // import Home from './views/Home'
-import Marketplace from './views/Marketplace'
-import CustomTokenMarketplace from './views/CustomTokenMarketplace'
-import MarketplaceWithFilter from './views/MarketplaceWithFilter'
-import MarketplaceWithUrl from './views/MarketplaceWithUrl'
-import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
-import MultiCurrencySell from './views/MultiCurrencySell'
-import MyCollection from './views/MyCollection'
-import SingleOrder from './views/SingleOrder'
+import MarketplaceSol from './views/MarketplaceSol'
+import MarketplaceWos from './views/MarketplaceWos'
+// import CustomTokenMarketplace from './views/CustomTokenMarketplace'
+// import MarketplaceWithFilter from './views/MarketplaceWithFilter'
+// import MarketplaceWithUrl from './views/MarketplaceWithUrl'
+// import MultiCurrencyMarketplace from './views/MultiCurrencyMarketplace'
+// import MultiCurrencySell from './views/MultiCurrencySell'
+import MyCollectionSol from './views/MyCollectionSol'
+import MyCollectionWos from './views/MyCollectionWos'
+// import SingleOrder from './views/SingleOrder'
 
 require('@solana/wallet-adapter-react-ui/styles.css')
 
@@ -115,7 +117,16 @@ const App = () => {
                       element={
                         <>
                           <TopNav showCurrencyToggle={true} />
-                          <MultiCurrencyMarketplace />
+                          <MarketplaceWos />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/sol-shop'
+                      element={
+                        <>
+                          <TopNav showCurrencyToggle={true} />
+                          <MarketplaceSol />
                         </>
                       }
                     />
@@ -124,7 +135,16 @@ const App = () => {
                       element={
                         <>
                           <TopNav showCurrencyToggle={true} />
-                          <MultiCurrencySell />
+                          <MyCollectionSol />
+                        </>
+                      }
+                    />
+                    <Route
+                      path='/admin'
+                      element={
+                        <>
+                          <TopNav showCurrencyToggle={true} />
+                          <MyCollectionWos />
                         </>
                       }
                     />

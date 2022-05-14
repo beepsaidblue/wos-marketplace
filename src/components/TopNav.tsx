@@ -54,12 +54,15 @@ const TopNav: React.FC<TopNavProps> = ({
     <HeaderBar>
       <Logo>
         <a href='https://www.worldofsolana.io/'>
-          <img alt='World of Solana' src='/logo-full.svg' width={120} />
+          <img alt='World of Solana' src='/logo-full.svg' width={100} />
         </a>
       </Logo>
       <Menu>
         <li>
-          <Link to='/'>Shop</Link>
+          <Link to='/'>WOS Shop</Link>
+        </li>
+        <li>
+          <Link to='/sol-shop'>SOL Shop</Link>
         </li>
         <li>
           <Link to='/my-collection'>My Collection</Link>
@@ -89,7 +92,7 @@ const HeaderBar = styled.div`
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 `
 
 const DropdownAnchor = styled.li`

@@ -30,6 +30,15 @@ const MarketplaceWos: React.FC = () => {
     )
   )
 
+  const filters = [
+    {name: 'Bird', identifier: -1017643581, attribute: {Pet: 'Bird'}},
+    {name: 'Bull', identifier: -1017643581, attribute: {Pet: 'Bull'}},
+    {name: 'Dragon', identifier: -1017643581, attribute: {Pet: 'Dragon'}},
+    {name: 'Octopus', identifier: -1017643581, attribute: {Pet: 'Octopus'}},
+    {name: 'Rodent', identifier: -1017643581, attribute: {Pet: 'Rodent'}},
+    {name: 'Slime', identifier: -1017643581, attribute: {Pet: 'Slime'}},
+  ];
+
   return (
     <DesContainer>
       <Stat
@@ -40,6 +49,7 @@ const MarketplaceWos: React.FC = () => {
       />
       <Orders
         wallet={wallet}
+        filters={filters}
         candyShop={candyShopRef.current}
         walletConnectComponent={<WalletMultiButton />}
       />

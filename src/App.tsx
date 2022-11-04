@@ -4,6 +4,7 @@ import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react
 import * as anchor from '@project-serum/anchor'
 import { WalletAdapterNetwork } from '@solana/wallet-adapter-base'
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui'
+import { CandyShopDataValidator } from "@liqnft/candy-shop";
 import {
   getPhantomWallet,
   getSlopeWallet,
@@ -109,48 +110,50 @@ const App = () => {
         <WalletProvider wallets={wallets} autoConnect={true}>
           <CurrencyProvider currencyOptions={currencyOptions}>
             <WalletModalProvider>
-              <main>
-                <MainContainer>
-                  <Routes>
-                    <Route
-                      path='/'
-                      element={
-                        <>
-                          <TopNav showCurrencyToggle={true} />
-                          <MarketplaceWos />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/sol-shop'
-                      element={
-                        <>
-                          <TopNav showCurrencyToggle={true} />
-                          <MarketplaceSol />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/my-collection'
-                      element={
-                        <>
-                          <TopNav showCurrencyToggle={true} />
-                          <MyCollectionSol />
-                        </>
-                      }
-                    />
-                    <Route
-                      path='/admin'
-                      element={
-                        <>
-                          <TopNav showCurrencyToggle={true} />
-                          <MyCollectionWos />
-                        </>
-                      }
-                    />
-                  </Routes>
-                </MainContainer>
-              </main>
+              <CandyShopDataValidator>
+                <main>
+                  <MainContainer>
+                    <Routes>
+                      <Route
+                        path='/'
+                        element={
+                          <>
+                            <TopNav showCurrencyToggle={true} />
+                            <MarketplaceWos />
+                          </>
+                        }
+                      />
+                      <Route
+                        path='/sol-shop'
+                        element={
+                          <>
+                            <TopNav showCurrencyToggle={true} />
+                            <MarketplaceSol />
+                          </>
+                        }
+                      />
+                      <Route
+                        path='/my-collection'
+                        element={
+                          <>
+                            <TopNav showCurrencyToggle={true} />
+                            <MyCollectionSol />
+                          </>
+                        }
+                      />
+                      <Route
+                        path='/admin'
+                        element={
+                          <>
+                            <TopNav showCurrencyToggle={true} />
+                            <MyCollectionWos />
+                          </>
+                        }
+                      />
+                    </Routes>
+                  </MainContainer>
+                </main>
+              </CandyShopDataValidator>
             </WalletModalProvider>
           </CurrencyProvider>
         </WalletProvider>

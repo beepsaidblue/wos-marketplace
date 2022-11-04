@@ -19,15 +19,15 @@ const MarketplaceSol: React.FC = () => {
   const wallet = useAnchorWallet();
 
   const candyShopRef = useRef<CandyShop>(
-    new CandyShop(
-      CANDY_SHOP_CREATOR_ADDRESS,
-      CANDY_SHOP_TREASURY_MINT,
-      CANDY_SHOP_PROGRAM_ID,
-      NETWORK,
-      {
+    new CandyShop({
+      candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+      treasuryMint: CANDY_SHOP_TREASURY_MINT,
+      candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+      env: NETWORK,
+      settings: {
         currencySymbol: 'SOL'
       }
-    )
+    })
   )
 
   return (

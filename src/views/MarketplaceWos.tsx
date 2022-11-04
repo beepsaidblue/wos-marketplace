@@ -19,24 +19,24 @@ const MarketplaceWos: React.FC = () => {
   const wallet = useAnchorWallet();
 
   const candyShopRef = useRef<CandyShop>(
-    new CandyShop(
-      CANDY_SHOP_CREATOR_ADDRESS,
-      CANDY_SHOP_TREASURY_MINT,
-      CANDY_SHOP_PROGRAM_ID,
-      NETWORK,
-      {
+    new CandyShop({
+      candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+      treasuryMint: CANDY_SHOP_TREASURY_MINT,
+      candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+      env: NETWORK,
+      settings: {
         currencySymbol: 'WOS'
       }
-    )
+    })
   )
 
   const filters = [
-    {name: 'Bird', identifier: -1017643581, attribute: {Pet: 'Bird'}},
-    {name: 'Bull', identifier: -1017643581, attribute: {Pet: 'Bull'}},
-    {name: 'Dragon', identifier: -1017643581, attribute: {Pet: 'Dragon'}},
-    {name: 'Octopus', identifier: -1017643581, attribute: {Pet: 'Octopus'}},
-    {name: 'Rodent', identifier: -1017643581, attribute: {Pet: 'Rodent'}},
-    {name: 'Slime', identifier: -1017643581, attribute: {Pet: 'Slime'}},
+    {name: 'Bird', identifier: -1017643581, collectionId: "1", attribute: {Pet: 'Bird'}},
+    {name: 'Bull', identifier: -1017643581, collectionId: "2", attribute: {Pet: 'Bull'}},
+    {name: 'Dragon', identifier: -1017643581, collectionId: "3", attribute: {Pet: 'Dragon'}},
+    {name: 'Octopus', identifier: -1017643581, collectionId: "4", attribute: {Pet: 'Octopus'}},
+    {name: 'Rodent', identifier: -1017643581, collectionId: "5", attribute: {Pet: 'Rodent'}},
+    {name: 'Slime', identifier: -1017643581, collectionId: "6", attribute: {Pet: 'Slime'}},
   ];
 
   return (

@@ -30,13 +30,13 @@ const MyCollection: React.FC = () => {
 
   useEffect(() => {
     setCandyShop(
-      new CandyShop(
-        CANDY_SHOP_CREATOR_ADDRESS,
-        new PublicKey(settings.treasuryMint),
-        CANDY_SHOP_PROGRAM_ID,
-        NETWORK,
-        settings
-      )
+      new CandyShop({
+        candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+        treasuryMint: new PublicKey(settings.treasuryMint),
+        candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+        env: NETWORK,
+        settings: settings
+      })
     );
   }, [settings]);
 

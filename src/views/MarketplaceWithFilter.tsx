@@ -23,12 +23,12 @@ const MarketplaceWithFilter: React.FC = () => {
   const wallet = useAnchorWallet();
 
   const candyShopRef = useRef<CandyShop>(
-    new CandyShop(
-      CANDY_SHOP_CREATOR_ADDRESS,
-      CANDY_SHOP_TREASURY_MINT,
-      CANDY_SHOP_PROGRAM_ID,
-      NETWORK
-    )
+    new CandyShop({
+      candyShopCreatorAddress: CANDY_SHOP_CREATOR_ADDRESS,
+      treasuryMint: CANDY_SHOP_TREASURY_MINT,
+      candyShopProgramId: CANDY_SHOP_PROGRAM_ID,
+      env: NETWORK
+    })
   )
 
   return (
@@ -45,8 +45,8 @@ const MarketplaceWithFilter: React.FC = () => {
         walletConnectComponent={<WalletMultiButton />}
         // configure filter by collection
         filters={[
-          {name: 'Puppies', identifier: 2036309415 },
-          {name: 'Smilies', identifier: -38328789 },
+          {name: 'Puppies', collectionId: "1", identifier: 2036309415 },
+          {name: 'Smilies', collectionId: "2", identifier: -38328789 },
         ]}
       />
     </DesContainer>
